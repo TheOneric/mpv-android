@@ -51,8 +51,6 @@ if [ ! -d lua ]; then
 fi
 
 # mpv
-if [ $TRAVIS -eq 0 ]; then
-	[ ! -d mpv ] && git clone https://github.com/mpv-player/mpv
-fi
+[ ! -d mpv ] && git clone https://github.com/mpv-player/mpv.git
 
 cd ..

@@ -23,12 +23,7 @@ jobs:
         run: |
           cd buildscripts && TRAVIS=1 ./download.sh
 
-      - name: Download mpv
-        run: |
-          cd buildscripts && mkdir deps/mpv
-          wget https://github.com/mpv-player/mpv/archive/master.tar.gz -O master.tgz
-          tar -xzf master.tgz -C deps/mpv --strip-components=1 && rm master.tgz
-
       - name: Build
         run: |
+          unset ANDROID_SDK_ROOT
           cd buildscripts && ./buildall.sh
