@@ -91,7 +91,7 @@ build () {
 		echo >&2 -e "\033[1;31mTarget $1 not found\033[m"
 		return 1
 	fi
-	echo >&2 -e "\033[1;34mBuilding $1...\033[m"
+	echo >&2 -e "\033[1;34mPreparing for $1...\033[m"
 	if [ $nodeps -eq 0 ]; then
 		local deps=$(getdeps $1)
 		echo >&2 "Dependencies: $deps"
@@ -99,6 +99,7 @@ build () {
 			build $dep
 		done
 	fi
+	echo >&2 -e "\033[1;34mBuilding $1...\033[m"
 	if [ "$1" == "mpv-android" ]; then
 		pushd ..
 		BUILDSCRIPT=buildscripts/scripts/$1.sh

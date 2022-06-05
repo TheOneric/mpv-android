@@ -41,7 +41,7 @@ if [ ! -d harfbuzz ]; then
 fi
 
 # libass
-[ ! -d libass ] && git clone https://github.com/libass/libass
+[ ! -d libass ] && git clone https://github.com/libass/libass.git
 
 # lua
 if [ ! -d lua ]; then
